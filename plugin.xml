@@ -9,10 +9,6 @@
             name="org.eclipse.gef.mvc.examples.shapes"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
-               name="applicationCSS"
-               value="platform:/plugin/org.eclipse.gef.mvc.examples.shapes/css/default.css">
-         </property>
-         <property
                name="appName"
                value="org.eclipse.gef.mvc.examples.shapes">
          </property>
