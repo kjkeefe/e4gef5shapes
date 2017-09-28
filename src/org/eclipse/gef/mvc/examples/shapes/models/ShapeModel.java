@@ -2,16 +2,16 @@ package org.eclipse.gef.mvc.examples.shapes.models;
 
 import java.util.ArrayList;
 
-public class Shape implements IConnectionListener {
+public class ShapeModel implements IConnectionModelListener {
 
 	private int x = 0;
 	private int y = 0;
 	private int w = 50;
 	private int h = 50;
 
-	private ArrayList<Connection> sourceConnections = new ArrayList<Connection>();
-	private ArrayList<Connection> targetConnections = new ArrayList<Connection>();
-	private ArrayList<IShapeListener> listeners = new ArrayList<IShapeListener>();
+	private ArrayList<ConnectionModel> sourceConnections = new ArrayList<ConnectionModel>();
+	private ArrayList<ConnectionModel> targetConnections = new ArrayList<ConnectionModel>();
+	private ArrayList<IShapeModelListener> listeners = new ArrayList<IShapeModelListener>();
 
 	public int getX() {
 		return x;
@@ -49,7 +49,7 @@ public class Shape implements IConnectionListener {
 		}
 	}
 
-	public void addConnection(Connection conn) {
+	public void addConnection(ConnectionModel conn) {
 		if (conn != null) {
 			if (conn.getSource() == this) {
 				sourceConnections.add(conn);
@@ -64,7 +64,7 @@ public class Shape implements IConnectionListener {
 		}
 	}
 
-	public void removeSourceConnection(Connection conn) {
+	public void removeSourceConnection(ConnectionModel conn) {
 		if (conn != null && sourceConnections.remove(conn)) {
 			if(!targetConnections.contains(conn))
 				conn.removeListener(this);
@@ -72,7 +72,7 @@ public class Shape implements IConnectionListener {
 		}
 	}
 
-	public void removeTargetConnection(Connection conn) {
+	public void removeTargetConnection(ConnectionModel conn) {
 		if (conn != null && targetConnections.remove(conn)) {
 			if(!sourceConnections.contains(conn))
 				conn.removeListener(this);
@@ -80,67 +80,67 @@ public class Shape implements IConnectionListener {
 		}
 	}
 	
-	public Connection[] getSourceConnections() {
-		return sourceConnections.toArray(new Connection[sourceConnections.size()]);
+	public ConnectionModel[] getSourceConnections() {
+		return sourceConnections.toArray(new ConnectionModel[sourceConnections.size()]);
 	}
 
-	public Connection[] getTargetConnections() {
-		return targetConnections.toArray(new Connection[targetConnections.size()]);
+	public ConnectionModel[] getTargetConnections() {
+		return targetConnections.toArray(new ConnectionModel[targetConnections.size()]);
 	}
 
-	public void addListener(IShapeListener l) {
+	public void addListener(IShapeModelListener l) {
 		if (!listeners.contains(l))
 			listeners.add(l);
 	}
 
-	public boolean removeListener(IShapeListener l) {
+	public boolean removeListener(IShapeModelListener l) {
 		return listeners.remove(l);
 	}
 
 	private void notifyShapeMoved(int oldX, int oldY, int newX, int newY) {
-		for (IShapeListener l : listeners) {
+		for (IShapeModelListener l : listeners) {
 			l.handleShapeMoved(this, oldX, oldY, newX, newY);
 		}
 	}
 
 	private void notifyShapeResized(int oldW, int oldH, int newWidth, int newHeight) {
-		for (IShapeListener l : listeners) {
+		for (IShapeModelListener l : listeners) {
 			l.handleShapeResized(this, oldW, oldH, newWidth, newHeight);
 		}
 	}
 
-	private void notifyTargetConnectionAdded(Connection conn) {
-		for (IShapeListener l : listeners) {
+	private void notifyTargetConnectionAdded(ConnectionModel conn) {
+		for (IShapeModelListener l : listeners) {
 			l.handleTargetConnectionAdded(this, conn);
 		}
 	}
 
-	private void notifySourceConnectionAdded(Connection conn) {
-		for (IShapeListener l : listeners) {
+	private void notifySourceConnectionAdded(ConnectionModel conn) {
+		for (IShapeModelListener l : listeners) {
 			l.handleSourceConnectionAdded(this, conn);
 		}
 	}
 
-	private void notifySourceConnectionRemoved(Connection conn) {
-		for (IShapeListener l : listeners) {
+	private void notifySourceConnectionRemoved(ConnectionModel conn) {
+		for (IShapeModelListener l : listeners) {
 			l.handleSourceConnectionRemoved(this, conn);
 		}
 	}
 
-	private void notifyTargetConnectionRemoved(Connection conn) {
-		for (IShapeListener l : listeners) {
+	private void notifyTargetConnectionRemoved(ConnectionModel conn) {
+		for (IShapeModelListener l : listeners) {
 			l.handleTargetConnectionRemoved(this, conn);
 		}
 	}
 
 	@Override
-	public void handleSourceChanged(Connection connection, Shape oldSource, Shape s) {
+	public void handleSourceChanged(ConnectionModel connection, ShapeModel oldSource, ShapeModel s) {
 		if(oldSource == this)
 			removeSourceConnection(connection);
 	}
 
 	@Override
-	public void handleTargetChanged(Connection connection, Shape oldTarget, Shape t) {
+	public void handleTargetChanged(ConnectionModel connection, ShapeModel oldTarget, ShapeModel t) {
 		if(oldTarget == this)
 			removeTargetConnection(connection);
 	}

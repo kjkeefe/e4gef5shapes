@@ -1,5 +1,5 @@
 package org.eclipse.gef.mvc.examples.shapes.models;
 
-public class Rectangle extends Shape {
+public class EllipseModel extends ShapeModel {
 
 }

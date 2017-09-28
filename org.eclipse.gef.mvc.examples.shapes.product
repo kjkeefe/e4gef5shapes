@@ -70,6 +70,7 @@
       <plugin id="org.eclipse.e4.ui.swt.gtk" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.widgets"/>
       <plugin id="org.eclipse.e4.ui.workbench"/>
+      <plugin id="org.eclipse.e4.ui.workbench.addons.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
@@ -89,11 +90,14 @@
       <plugin id="org.eclipse.fx.osgi" fragment="true"/>
       <plugin id="org.eclipse.gef.common"/>
       <plugin id="org.eclipse.gef.fx"/>
+      <plugin id="org.eclipse.gef.fx.jface"/>
       <plugin id="org.eclipse.gef.fx.swt"/>
       <plugin id="org.eclipse.gef.geometry"/>
       <plugin id="org.eclipse.gef.geometry.convert.fx"/>
       <plugin id="org.eclipse.gef.mvc.examples.shapes"/>
       <plugin id="org.eclipse.gef.mvc.fx"/>
+      <plugin id="org.eclipse.gef.mvc.fx.ui"/>
+      <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.osgi"/>
@@ -107,6 +111,10 @@
       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
+      <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>
