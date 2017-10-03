@@ -5,11 +5,11 @@ import java.util.HashSet;
 
 public class DiagramModel {
 	
-	private HashSet<ShapeModel> shapes = new HashSet<ShapeModel>();
+	private HashSet<AbstractNodeModel> shapes = new HashSet<AbstractNodeModel>();
 	private HashSet<ConnectionModel> connections = new HashSet<ConnectionModel>();
 	private ArrayList<IDiagramModelListener> listeners = new ArrayList<IDiagramModelListener>();
 	
-	public boolean addShape(ShapeModel s) {
+	public boolean addShape(AbstractNodeModel s) {
 		if(s != null && shapes.add(s)) {
 			notifyShapeAdded(s);
 			return true;
@@ -17,11 +17,11 @@ public class DiagramModel {
 		return false;
 	}
 	
-	public ShapeModel[] getShapes() {
-		return shapes.toArray(new ShapeModel[shapes.size()]);
+	public ArrayList<AbstractNodeModel> getShapes() {
+		return new ArrayList<AbstractNodeModel>(shapes);
 	}
 	
-	public boolean removeShape(ShapeModel s) {
+	public boolean removeShape(AbstractNodeModel s) {
 		if(s != null && shapes.remove(s)) {
 			for(ConnectionModel c : s.getSourceConnections())
 				removeConnection(c);
@@ -41,8 +41,8 @@ public class DiagramModel {
 		return false;
 	}
 	
-	public ConnectionModel[] getConnections() {
-		return connections.toArray(new ConnectionModel[connections.size()]);
+	public ArrayList<ConnectionModel> getConnections() {
+		return new ArrayList<ConnectionModel>(connections);
 	}
 	
 	public boolean removeConnection(ConnectionModel c) {
@@ -65,13 +65,13 @@ public class DiagramModel {
 	}
 	
 	
-	private void notifyShapeAdded(ShapeModel s) {
+	private void notifyShapeAdded(AbstractNodeModel s) {
 		for(IDiagramModelListener l : listeners) {
 			l.handleShapeAdded(this, s);
 		}
 	}
 	
-	private void notifyShapeRemoved(ShapeModel s) {
+	private void notifyShapeRemoved(AbstractNodeModel s) {
 		for(IDiagramModelListener l : listeners) {
 			l.handleShapeRemoved(this, s);
 		}

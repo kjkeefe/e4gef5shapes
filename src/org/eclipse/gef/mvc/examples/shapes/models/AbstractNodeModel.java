@@ -2,12 +2,18 @@ package org.eclipse.gef.mvc.examples.shapes.models;
 
 import java.util.ArrayList;
 
-public class ShapeModel implements IConnectionModelListener {
+import org.eclipse.gef.geometry.planar.AffineTransform;
+import org.eclipse.gef.geometry.planar.Point;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+
+public class AbstractNodeModel implements IConnectionModelListener {
+	
 	private int x = 0;
 	private int y = 0;
-	private int w = 50;
-	private int h = 50;
+	private double w = 50;
+	private double h = 50;
 
 	private ArrayList<ConnectionModel> sourceConnections = new ArrayList<ConnectionModel>();
 	private ArrayList<ConnectionModel> targetConnections = new ArrayList<ConnectionModel>();
@@ -31,18 +37,18 @@ public class ShapeModel implements IConnectionModelListener {
 		}
 	}
 
-	public int getHeight() {
+	public double getHeight() {
 		return h;
 	}
 
-	public int getWidth() {
+	public double getWidth() {
 		return w;
 	}
 
-	public void setSize(int newWidth, int newHeight) {
+	public void setSize(double newWidth, double newHeight) {
 		if (newWidth != w || newHeight != h) {
-			int oldW = w;
-			int oldH = h;
+			double oldW = w;
+			double oldH = h;
 			w = newWidth;
 			h = newHeight;
 			notifyShapeResized(oldW, oldH, newWidth, newHeight);
@@ -87,7 +93,7 @@ public class ShapeModel implements IConnectionModelListener {
 	public ConnectionModel[] getTargetConnections() {
 		return targetConnections.toArray(new ConnectionModel[targetConnections.size()]);
 	}
-
+	
 	public void addListener(IShapeModelListener l) {
 		if (!listeners.contains(l))
 			listeners.add(l);
@@ -103,7 +109,7 @@ public class ShapeModel implements IConnectionModelListener {
 		}
 	}
 
-	private void notifyShapeResized(int oldW, int oldH, int newWidth, int newHeight) {
+	private void notifyShapeResized(double oldW, double oldH, double newWidth, double newHeight) {
 		for (IShapeModelListener l : listeners) {
 			l.handleShapeResized(this, oldW, oldH, newWidth, newHeight);
 		}
@@ -134,14 +140,24 @@ public class ShapeModel implements IConnectionModelListener {
 	}
 
 	@Override
-	public void handleSourceChanged(ConnectionModel connection, ShapeModel oldSource, ShapeModel s) {
+	public void handleSourceChanged(ConnectionModel connection, AbstractNodeModel oldSource, AbstractNodeModel s) {
 		if(oldSource == this)
 			removeSourceConnection(connection);
 	}
 
 	@Override
-	public void handleTargetChanged(ConnectionModel connection, ShapeModel oldTarget, ShapeModel t) {
+	public void handleTargetChanged(ConnectionModel connection, AbstractNodeModel oldTarget, AbstractNodeModel t) {
 		if(oldTarget == this)
 			removeTargetConnection(connection);
+	}
+
+	public void removeConnection(ConnectionModel contentAnchorage) {
+		if(sourceConnections.contains(contentAnchorage))
+			removeSourceConnection(contentAnchorage);
+		else removeTargetConnection(contentAnchorage);
+	}
+
+	public Point getPoint() {
+		return new Point(getX(), getY());
 	}
 }

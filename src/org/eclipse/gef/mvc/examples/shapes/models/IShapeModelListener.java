@@ -2,16 +2,16 @@ package org.eclipse.gef.mvc.examples.shapes.models;
 
 public interface IShapeModelListener {
 
-	void handleShapeMoved(ShapeModel shape, int oldX, int oldY, int newX, int newY);
+	void handleShapeMoved(AbstractNodeModel shape, int oldX, int oldY, int newX, int newY);
 
-	void handleShapeResized(ShapeModel shape, int oldW, int oldH, int newWidth, int newHeight);
+	void handleShapeResized(AbstractNodeModel shape, double oldW, double oldH, double newWidth, double newHeight);
 
-	void handleTargetConnectionAdded(ShapeModel shape, ConnectionModel conn);
+	void handleTargetConnectionAdded(AbstractNodeModel shape, ConnectionModel conn);
 
-	void handleSourceConnectionAdded(ShapeModel shape, ConnectionModel conn);
+	void handleSourceConnectionAdded(AbstractNodeModel shape, ConnectionModel conn);
 
-	void handleSourceConnectionRemoved(ShapeModel shape, ConnectionModel conn);
+	void handleSourceConnectionRemoved(AbstractNodeModel shape, ConnectionModel conn);
 
-	void handleTargetConnectionRemoved(ShapeModel shape, ConnectionModel conn);
+	void handleTargetConnectionRemoved(AbstractNodeModel shape, ConnectionModel conn);
 
 }

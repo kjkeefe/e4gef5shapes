@@ -1,67 +1,42 @@
 package org.eclipse.gef.mvc.examples.shapes.parts;
 
-import java.util.List;
-
 import org.eclipse.gef.fx.nodes.GeometryNode;
 import org.eclipse.gef.geometry.planar.Dimension;
+import org.eclipse.gef.geometry.planar.Ellipse;
 import org.eclipse.gef.geometry.planar.IShape;
-import org.eclipse.gef.mvc.fx.parts.AbstractContentPart;
-import org.eclipse.gef.mvc.fx.parts.IResizableContentPart;
-import org.eclipse.gef.mvc.fx.parts.ITransformableContentPart;
+import org.eclipse.gef.mvc.examples.shapes.models.EllipseModel;
 
-import com.google.common.collect.SetMultimap;
-
-import javafx.scene.transform.Affine;
-
-public class EllipsePart extends AbstractContentPart<GeometryNode<IShape>>
-implements ITransformableContentPart<GeometryNode<IShape>>, IResizableContentPart<GeometryNode<IShape>> {
+public class EllipsePart extends AbstractNodePart {
 
 	@Override
-	public Dimension getContentSize() {
-		// TODO Auto-generated method stub
-		return null;
+	protected IShape createGeometry() {
+		return new Ellipse(0, 0, 0, 0);
 	}
-
+	
 	@Override
-	public void setContentSize(Dimension totalSize) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Affine getContentTransform() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setContentTransform(Affine totalTransform) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected SetMultimap<? extends Object, String> doGetContentAnchorages() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected List<? extends Object> doGetContentChildren() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected GeometryNode<IShape> doCreateVisual() {
-		// TODO Auto-generated method stub
-		return null;
+	public EllipseModel getContent() {
+		return (EllipseModel)super.getContent();
 	}
 
 	@Override
 	protected void doRefreshVisual(GeometryNode<IShape> visual) {
-		// TODO Auto-generated method stub
+		EllipseModel e = getContent();
+		((Ellipse)geometry).setBounds(e.getX(), e.getY(), e.getWidth(), e.getHeight());
 		
+		super.doRefreshVisual(visual);
+	}
+	
+	@Override
+	public Dimension getContentSize() {
+		EllipseModel em = getContent();
+		return new Dimension(em.getWidth(), em.getHeight());
 	}
 
+	@Override
+	public void setContentSize(Dimension totalSize) {
+		EllipseModel em = getContent();
+		em.setSize(totalSize.getWidth(), totalSize.getHeight());
+	}
+
+	
 }

@@ -4,29 +4,29 @@ import java.util.ArrayList;
 
 public class ConnectionModel {
 
-	private ShapeModel source;
-	private ShapeModel target;
+	private AbstractNodeModel source;
+	private AbstractNodeModel target;
 	private ArrayList<IConnectionModelListener> listeners = new ArrayList<IConnectionModelListener>();
 
-	public ShapeModel getSource() {
+	public AbstractNodeModel getSource() {
 		return source;
 	}
 
-	public ShapeModel getTarget() {
+	public AbstractNodeModel getTarget() {
 		return target;
 	}
 
-	public void setSource(ShapeModel s) {
+	public void setSource(AbstractNodeModel s) {
 		if (source != s) {
-			ShapeModel oldSource = source;
+			AbstractNodeModel oldSource = source;
 			source = s;
 			notifySourceChanged(oldSource, s);
 		}
 	}
 
-	public void setTarget(ShapeModel t) {
+	public void setTarget(AbstractNodeModel t) {
 		if(target != t) {
-			ShapeModel oldTarget = target;
+			AbstractNodeModel oldTarget = target;
 			target = t;
 			notifyTargetChanged(oldTarget, t);
 		}
@@ -41,12 +41,12 @@ public class ConnectionModel {
 		return listeners.remove(l);
 	}
 	
-	private void notifySourceChanged(ShapeModel oldSource, ShapeModel s) {
+	private void notifySourceChanged(AbstractNodeModel oldSource, AbstractNodeModel s) {
 		for(IConnectionModelListener l : listeners)
 			l.handleSourceChanged(this, oldSource, s);
 	}
 	
-	private void notifyTargetChanged(ShapeModel oldTarget, ShapeModel t) {
+	private void notifyTargetChanged(AbstractNodeModel oldTarget, AbstractNodeModel t) {
 		for(IConnectionModelListener l : listeners) 
 			l.handleTargetChanged(this, oldTarget, t);
 	}

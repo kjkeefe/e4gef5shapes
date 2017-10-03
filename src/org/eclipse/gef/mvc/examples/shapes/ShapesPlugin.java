@@ -13,8 +13,7 @@ public class ShapesPlugin implements BundleActivator {
 
 	@Override
 	public void start(BundleContext context) throws Exception {
-		injector = Guice.createInjector(Modules.override(new ShapesExampleModule())
-				.with(new ShapesExampleUiModule()));
+		injector = Guice.createInjector(new ShapesExampleModule());
 	}
 
 	@Override
