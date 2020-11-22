@@ -9,7 +9,7 @@
    <launcherArgs>
       <programArgs>-clearPersistedState
       </programArgs>
-      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi
+      <vmArgs>-Dosgi.framework.extensions=org.eclipse.fx.osgi -Defxclipse.java-modules.dir=/Library/Java/Extensions/javafx-sdk-11.0.2/lib
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -118,10 +118,6 @@
    </plugins>
 
    <configurations>
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
 
