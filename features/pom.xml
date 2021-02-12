@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>bundles</artifactId>
+    <artifactId>features</artifactId>
     <packaging>pom</packaging>
 
     <parent>

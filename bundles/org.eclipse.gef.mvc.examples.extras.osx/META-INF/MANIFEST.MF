@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Osx
+Bundle-SymbolicName: org.eclipse.gef.mvc.examples.extras.osx
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: org.eclipse.gef.mvc.examples.extras;bundle-version="1.0.0"
+Automatic-Module-Name: org.eclipse.gef.mvc.examples.extras.osx
+Bundle-RequiredExecutionEnvironment: JavaSE-11

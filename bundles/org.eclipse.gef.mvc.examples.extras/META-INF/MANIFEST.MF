@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Extras
+Bundle-SymbolicName: org.eclipse.gef.mvc.examples.extras
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.eclipse.gef.mvc.examples.extras
+Bundle-RequiredExecutionEnvironment: JavaSE-11
