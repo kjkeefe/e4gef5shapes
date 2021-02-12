@@ -3,18 +3,6 @@
 <plugin>
 
    <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            name="org.eclipse.gef.mvc.examples.shapes"
-            application="org.eclipse.e4.ui.workbench.swt.E4Application">
-         <property
-               name="appName"
-               value="org.eclipse.gef.mvc.examples.shapes">
-         </property>
-      </product>
-   </extension>
-   <extension
          id="e4gef5shapes"
          point="org.eclipse.core.runtime.products">
       <product
