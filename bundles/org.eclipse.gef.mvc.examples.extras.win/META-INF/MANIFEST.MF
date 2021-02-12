@@ -53,3 +53,4 @@ Export-Package: javafx.animation,
  javafx.stage,
  javafx.util,
  javafx.util.converter
+Eclipse-PlatformFilter: (osgi.os=win32)

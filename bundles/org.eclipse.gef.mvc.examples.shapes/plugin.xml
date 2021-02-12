@@ -14,5 +14,17 @@
          </property>
       </product>
    </extension>
+   <extension
+         id="e4gef5shapes"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="e4gef5shapes">
+         <property
+               name="appName"
+               value="e4gef5shapes">
+         </property>
+      </product>
+   </extension>
 
 </plugin>

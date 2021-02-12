@@ -3,16 +3,16 @@
 <target name="shapesTarget" sequenceNumber="22">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/releases/latest"/>
-			<unit id="org.eclipse.emf.ecore.xcore.sdk.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.gef.mvc.sdk.feature.group" version="0.0.0"/>
+			<repository location="http://download.eclipse.org/releases/latest"/>
+			<unit id="org.eclipse.emf.ecore.xcore.sdk.feature.group" version="1.16.0.v20201105-0712"/>
+			<unit id="org.eclipse.fx.runtime.min.feature.feature.group" version="3.7.0.202010120720"/>
+			<unit id="org.eclipse.gef.mvc.sdk.feature.group" version="5.2.3.202012080300"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="https://download.eclipse.org/eclipse/updates/4.17/"/>
-			<unit id="org.eclipse.platform.sdk" version="0.0.0"/>
-			<unit id="org.eclipse.rcp.feature.group" version="0.0.0"/>
-			<unit id="org.eclipse.rcp.source.feature.group" version="0.0.0"/>
+			<repository location="https://download.eclipse.org/eclipse/updates/4.18/"/>
+			<unit id="org.eclipse.platform.sdk" version="4.18.0.I20201202-1800"/>
+			<unit id="org.eclipse.rcp.feature.group" version="4.18.0.v20201202-1800"/>
+			<unit id="org.eclipse.rcp.source.feature.group" version="4.18.0.v20201202-1800"/>
 		</location>
 	</locations>
 </target>
