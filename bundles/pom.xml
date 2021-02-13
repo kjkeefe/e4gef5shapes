@@ -11,6 +11,10 @@
     </parent>
 
     <modules>
-        <module>org.eclipse.gef.mvc.examples.shapes</module>
+      <module>io.kaje.eclipse.gef.mvc.examples.shapes.extras</module>
+      <module>io.kaje.eclipse.gef.mvc.examples.shapes.extras.win</module>
+      <module>io.kaje.eclipse.gef.mvc.examples.shapes.extras.osx</module>
+      <module>io.kaje.eclipse.gef.mvc.examples.shapes.extras.linux</module>      
+      <module>io.kaje.eclipse.gef.mvc.examples.shapes</module>
     </modules>
 </project>

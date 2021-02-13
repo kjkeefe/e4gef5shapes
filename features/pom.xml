@@ -11,6 +11,6 @@
     </parent>
 
     <modules>
-        <module>org.eclipse.gef.mvc.examples.shapes.feature</module>
+        <module>io.kaje.eclipse.gef.mvc.examples.shapes.feature</module>
     </modules>
 </project>

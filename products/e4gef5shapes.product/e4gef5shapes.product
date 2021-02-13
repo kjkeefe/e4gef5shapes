@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="e4gef5shapes" uid="e4gef5shapes" id="org.eclipse.gef.mvc.examples.shapes.e4gef5shapes" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="e4gef5shapes" uid="e4gef5shapes" id="io.kaje.eclipse.gef.mvc.examples.shapes.e4gef5shapes" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -36,7 +36,7 @@
       <feature id="org.eclipse.gef.fx.swt"/>
       <feature id="org.eclipse.fx.runtime.min.feature"/>
       <feature id="org.eclipse.e4.rcp"/>
-      <feature id="org.eclipse.gef.mvc.examples.shapes.feature"/>
+      <feature id="io.kaje.eclipse.gef.mvc.examples.shapes.feature"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
    </features>

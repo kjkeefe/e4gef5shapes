@@ -6,12 +6,12 @@
 		<project>bundles</project>
 		<project>e4gef5shapes.product</project>
 		<project>features</project>
-		<project>org.eclipse.gef.mvc.examples.extras</project>
-		<project>org.eclipse.gef.mvc.examples.extras.linux</project>
-		<project>org.eclipse.gef.mvc.examples.extras.osx</project>
-		<project>org.eclipse.gef.mvc.examples.extras.win</project>
-		<project>org.eclipse.gef.mvc.examples.shapes</project>
-		<project>org.eclipse.gef.mvc.examples.shapes.feature</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.extras</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.extras.linux</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.extras.osx</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.extras.win</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.shapes</project>
+		<project>io.kaje.eclipse.gef.mvc.examples.shapes.feature</project>
 		<project>products</project>
 	</projects>
 	<buildSpec>
