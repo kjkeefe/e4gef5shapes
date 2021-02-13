@@ -29,18 +29,18 @@ In the "Testing" section, click the "Launch an Eclipse application" link to laun
 
 At this point, the application window opens and is blank. The console window shows the following error output:
 
-<pre>!SESSION 2021-02-12 16:39:02.466 -----------------------------------------------
+<pre>!SESSION 2021-02-13 16:06:52.040 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=11.0.8
 java.vendor=AdoptOpenJDK
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
-Framework arguments:  -product org.eclipse.gef.mvc.examples.shapes.e4gef5shapes
-Command-line arguments:  -product org.eclipse.gef.mvc.examples.shapes.e4gef5shapes -data /Users/kjkeefe/eclipse-workspace-mobius/../runtime-e4gef5shapes.product -dev file:/Users/kjkeefe/eclipse-workspace-mobius/.metadata/.plugins/org.eclipse.pde.core/e4gef5shapes.product/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+Framework arguments:  -product io.kaje.eclipse.gef.mvc.examples.shapes.e4gef5shapes
+Command-line arguments:  -product io.kaje.eclipse.gef.mvc.examples.shapes.e4gef5shapes -data /Users/kjkeefe/eclipse-workspace-mobius/../runtime-e4gef5shapes.product -dev file:/Users/kjkeefe/eclipse-workspace-mobius/.metadata/.plugins/org.eclipse.pde.core/e4gef5shapes.product/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
 
-!ENTRY org.eclipse.osgi 4 0 2021-02-12 16:39:05.618
-!MESSAGE An error occurred while automatically activating bundle org.eclipse.gef.mvc.examples.shapes (104).
+!ENTRY org.eclipse.osgi 4 0 2021-02-13 16:06:54.969
+!MESSAGE An error occurred while automatically activating bundle io.kaje.eclipse.gef.mvc.examples.shapes (12).
 !STACK 0
-org.osgi.framework.BundleException: Exception in org.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start() of bundle org.eclipse.gef.mvc.examples.shapes.
+org.osgi.framework.BundleException: Exception in io.kaje.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start() of bundle io.kaje.eclipse.gef.mvc.examples.shapes.
 	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:835)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:763)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1011)
@@ -107,7 +107,7 @@ Caused by: java.lang.NoClassDefFoundError: javafx/embed/swt/FXCanvas
 	at com.google.inject.Guice.createInjector(Guice.java:95)
 	at com.google.inject.Guice.createInjector(Guice.java:72)
 	at com.google.inject.Guice.createInjector(Guice.java:62)
-	at org.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
+	at io.kaje.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:814)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
 	at java.base/java.security.AccessController.doPrivileged(Native Method)
@@ -135,7 +135,7 @@ java.lang.NoClassDefFoundError: javafx/embed/swt/FXCanvas
 	at com.google.inject.Guice.createInjector(Guice.java:95)
 	at com.google.inject.Guice.createInjector(Guice.java:72)
 	at com.google.inject.Guice.createInjector(Guice.java:62)
-	at org.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
+	at io.kaje.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:814)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
 	at java.base/java.security.AccessController.doPrivileged(Native Method)
@@ -195,10 +195,10 @@ Caused by: java.lang.ClassNotFoundException: javafx.embed.swt.FXCanvas cannot be
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
 	... 69 more
 
-!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-02-12 16:39:05.621
-!MESSAGE Unable to load class 'org.eclipse.gef.mvc.examples.shapes.view.MainPart' from bundle '104'
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2021-02-13 16:06:54.972
+!MESSAGE Unable to load class 'io.kaje.eclipse.gef.mvc.examples.shapes.view.MainPart' from bundle '12'
 !STACK 0
-java.lang.ClassNotFoundException: An error occurred while automatically activating bundle org.eclipse.gef.mvc.examples.shapes (104).
+java.lang.ClassNotFoundException: An error occurred while automatically activating bundle io.kaje.eclipse.gef.mvc.examples.shapes (12).
 	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:126)
 	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:572)
 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:346)
@@ -242,7 +242,7 @@ java.lang.ClassNotFoundException: An error occurred while automatically activati
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1434)
-Caused by: org.osgi.framework.BundleException: Exception in org.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start() of bundle org.eclipse.gef.mvc.examples.shapes.
+Caused by: org.osgi.framework.BundleException: Exception in io.kaje.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start() of bundle io.kaje.eclipse.gef.mvc.examples.shapes.
 	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:835)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:763)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1011)
@@ -268,7 +268,7 @@ Caused by: java.lang.NoClassDefFoundError: javafx/embed/swt/FXCanvas
 	at com.google.inject.Guice.createInjector(Guice.java:95)
 	at com.google.inject.Guice.createInjector(Guice.java:72)
 	at com.google.inject.Guice.createInjector(Guice.java:62)
-	at org.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
+	at io.kaje.eclipse.gef.mvc.examples.shapes.ShapesPlugin.start(ShapesPlugin.java:16)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:814)
 	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
 	at java.base/java.security.AccessController.doPrivileged(Native Method)
@@ -279,4 +279,5 @@ Caused by: java.lang.ClassNotFoundException: javafx.embed.swt.FXCanvas cannot be
 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:171)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
 	... 69 more
+
 </pre>
