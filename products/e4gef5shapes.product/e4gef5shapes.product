@@ -13,7 +13,6 @@
       </vmArgsMac>
    </launcherArgs>
 
-
    <launcher name="e4gef5shapes">
       <win useIco="false">
          <bmp/>
@@ -39,6 +38,11 @@
       <feature id="io.kaje.eclipse.gef.mvc.examples.shapes.feature"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
+      <feature id="openjfx.media.feature" installMode="root"/>
+      <feature id="openjfx.standard.feature" installMode="root"/>
+      <feature id="openjfx.swing.feature" installMode="root"/>
+      <feature id="openjfx.swt.feature" installMode="root"/>
+      <feature id="openjfx.web.feature" installMode="root"/>
    </features>
 
 
