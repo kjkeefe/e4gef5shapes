@@ -21,10 +21,67 @@
 			<url>https://www.mobius.illinois.edu/target</url>
 			<layout>p2</layout>
 		</repository>
+		<repository>
+			<id>openjfx-p2</id>
+			<url>https://downloads.efxclipse.bestsolution.at/p2-repos/openjfx-11/repository/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<name>BestSolution.at e(fx)clipse releases</name>
+			<id>efxclipse-releases</id>
+			<url>http://maven.bestsolution.at/efxclipse-releases/</url>
+		</repository>
 	</repositories>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>11</source>
+					<target>11</target>
+					<extraClasspathElements>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-base</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-graphics</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-controls</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-fxml</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-media</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-web</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+						<extraClasspathElement>
+							<groupId>at.bestsolution.openjfx</groupId>
+							<artifactId>javafx-swt</artifactId>
+							<version>11</version>
+						</extraClasspathElement>
+					</extraClasspathElements>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
