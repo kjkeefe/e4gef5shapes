@@ -27,7 +27,7 @@
 				<configuration>
 					<products>
 						<product>
-							<id>e4gef5shapes.product</id>
+							<id>e4gef5shapes</id>
 							<rootFolders>
 								<macosx>e4gef5.app</macosx>
 							</rootFolders>
